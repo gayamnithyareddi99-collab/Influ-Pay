@@ -466,6 +466,20 @@ function closeMenu(){
   --black:#111111;
   --white:#ffffff;
 }
+/* Performance Optimization */
+.bg-red-shape,
+.bg-black-accent,
+.diagonal-overlay,
+.dot-pattern{
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Prevent unnecessary repaint */
+.home-influpay{
+  contain: layout paint;
+}
 /* ===== HERO ACTIONS ===== */
 .hero-actions{
   display:flex;
@@ -902,6 +916,7 @@ function closeMenu(){
     height:220px;
   }
 }
+
 </style>
 
 <script>
@@ -1246,86 +1261,83 @@ function toggleView(){
 
 </style>
 
-<!-- ================= BUSINESS MODEL SECTION ================= -->
-<section class="business-model-white">
+<!-- ================= BUSINESS MODEL 2.0 ================= -->
+<section class="bm-compact">
 
-  <div class="bm-container">
+  <div class="bm-wrapper">
 
-    <span class="bm-label">REVENUE FRAMEWORK</span>
+    <span class="bm-mini-label">ECONOMIC ENGINE</span>
 
-    <h2 class="bm-title">
-      A <span class="red">Performance-Driven</span> Revenue Structure
-      <br>
-      Built Around <span class="dark">Verified Outcomes</span>
+    <h2 class="bm-heading">
+      How <span>Influ-Pay</span> Generates Revenue
     </h2>
 
-    <div class="bm-divider">
-      <span></span>
-    </div>
+    <div class="bm-accent-line"></div>
 
-    <p class="bm-intro">
-      Influ-Pay operates on a results-first model. Restaurants only pay when
-      measurable dining outcomes occur. The system integrates creator
-      activation, attendance validation, and automated settlement into
-      one structured financial loop designed to eliminate waste,
-      prevent disputes, and maximise measurable ROI.
+    <p class="bm-summary">
+      Influ-Pay monetises verified performance — not exposure.
+      Revenue is generated only when real-world dining outcomes
+      are validated, recorded, and settled through the platform.
     </p>
 
-    <!-- FLOW STRUCTURE -->
-    <div class="bm-flow">
+    <!-- CORE STRUCTURE -->
+    <div class="bm-grid">
 
-      <div class="bm-step">
-        <div class="bm-circle">01</div>
-        <h4>Campaign Activation</h4>
+      <div class="bm-card">
+        <h4>Performance Commission</h4>
         <p>
-          Restaurants define payout logic, capacity rules,
-          and structured CPA thresholds aligned directly
-          with revenue goals and seat yield management.
+          A structured margin is retained from every
+          <strong>verified seated cover</strong>,
+          attended booking, or validated redemption.
+          No outcome → No commission.
         </p>
       </div>
 
-      <div class="bm-line"></div>
-
-      <div class="bm-step">
-        <div class="bm-circle">02</div>
-        <h4>Outcome Verification</h4>
+      <div class="bm-card">
+        <h4>Infrastructure Subscription</h4>
         <p>
-          Dual-key attendance validation and receipt tokenisation
-          ensure only physically seated, verified guests
-          trigger performance settlement logic.
+          Restaurants access advanced analytics,
+          compliance protection, fraud detection,
+          and yield-based optimisation tools
+          via tiered monthly plans.
         </p>
       </div>
 
-      <div class="bm-line"></div>
-
-      <div class="bm-step">
-        <div class="bm-circle">03</div>
-        <h4>Automated Settlement</h4>
+      <div class="bm-card">
+        <h4>Enterprise Licensing</h4>
         <p>
-          Creator payouts execute automatically once validation
-          is confirmed. Influ-Pay retains a structured
-          infrastructure margin as platform revenue.
+          Multi-location groups license the
+          verification + settlement engine
+          as embedded infrastructure
+          across portfolio brands.
         </p>
       </div>
 
     </div>
 
-    <!-- EXTRA REVENUE STREAMS -->
-    <div class="bm-extra">
+    <!-- VALUE LOOP -->
+    <div class="bm-loop">
 
-      <div class="bm-highlight">
-        <h5>Performance Commission</h5>
-        <p>Success-based payout margin per validated booking.</p>
+      <div class="loop-step">
+        <span>Campaign Launch</span>
       </div>
 
-      <div class="bm-highlight">
-        <h5>Subscription Access</h5>
-        <p>Premium analytics, campaign optimisation & fraud controls.</p>
+      <div class="loop-arrow">→</div>
+
+      <div class="loop-step">
+        <span>Outcome Verified</span>
       </div>
 
-      <div class="bm-highlight">
-        <h5>Enterprise Licensing</h5>
-        <p>Infrastructure licensing for multi-location groups.</p>
+      <div class="loop-arrow">→</div>
+
+      <div class="loop-step">
+        <span>Automated Settlement</span>
+      </div>
+
+      <div class="loop-arrow">→</div>
+
+      <div class="loop-step red-step">
+        <span>Platform Margin Captured</span>
       </div>
 
     </div>
@@ -1339,212 +1351,172 @@ function toggleView(){
   --red:#e10600;
   --black:#000000;
   --white:#ffffff;
-  --gray:#666666;
+  --gray:#555555;
 }
 
 /* SECTION */
-.business-model-white{
+.bm-compact{
   background:#ffffff;
-  padding:130px 8%;
+  padding:110px 8%;
   color:#000000;
   text-align:center;
 }
 
-/* LABEL */
-.bm-label{
-  font-size:12px;
-  letter-spacing:0.4em;
+/* MINI LABEL */
+.bm-mini-label{
+  font-size:11px;
+  letter-spacing:0.35em;
   font-weight:800;
   color:#e10600;
-  position:relative;
-  display:inline-block;
-}
-
-.bm-label::after{
-  content:"";
-  width:30px;
-  height:2px;
-  background:#e10600;
-  position:absolute;
-  right:-40px;
-  top:50%;
-}
-
-/* TITLE */
-.bm-title{
-  font-size:46px;
-  font-weight:900;
-  margin:25px 0 20px;
-  line-height:1.2;
-}
-
-.bm-title .red{
-  color:#e10600;
-}
-
-.bm-title .dark{
-  color:#000000;
-  border-bottom:3px solid #e10600;
-  padding-bottom:4px;
-}
-
-/* DIVIDER */
-.bm-divider{
-  width:160px;
-  height:3px;
-  background:#eee;
-  margin:0 auto 50px;
-  position:relative;
-  overflow:hidden;
-}
-
-.bm-divider span{
-  position:absolute;
-  left:0;
-  width:70px;
-  height:100%;
-  background:#e10600;
-}
-
-/* INTRO */
-.bm-intro{
-  max-width:760px;
-  margin:0 auto 80px;
-  font-size:17px;
-  color:#444;
-  line-height:1.75;
-}
-
-/* FLOW */
-.bm-flow{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:50px;
-  flex-wrap:wrap;
-  margin-bottom:80px;
-}
-
-/* STEP */
-.bm-step{
-  max-width:260px;
-  text-align:left;
-  transition:0.3s ease;
-}
-
-.bm-step:hover{
-  transform:translateY(-6px);
-}
-
-/* CIRCLE */
-.bm-circle{
-  width:48px;
-  height:48px;
-  border:2px solid #e10600;
-  color:#e10600;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  font-weight:900;
-  margin-bottom:18px;
-  font-size:14px;
 }
 
 /* HEADING */
-.bm-step h4{
-  font-size:17px;
+.bm-heading{
+  font-size:40px;
   font-weight:900;
-  margin-bottom:10px;
-  position:relative;
+  margin:18px 0 10px;
 }
 
-.bm-step h4::after{
-  content:"";
-  width:40px;
-  height:2px;
+.bm-heading span{
+  color:#e10600;
+}
+
+/* ACCENT LINE */
+.bm-accent-line{
+  width:80px;
+  height:3px;
   background:#e10600;
-  display:block;
-  margin-top:6px;
+  margin:15px auto 30px;
 }
 
-/* TEXT */
-.bm-step p{
-  font-size:14px;
-  color:#555;
+/* SUMMARY */
+.bm-summary{
+  max-width:680px;
+  margin:0 auto 70px;
+  font-size:16px;
   line-height:1.7;
+  color:#444;
 }
 
-/* CONNECTING LINE */
-.bm-line{
-  width:60px;
-  height:2px;
-  background:#e10600;
-  position:relative;
-}
-
-.bm-line::after{
-  content:"";
-  position:absolute;
-  right:-6px;
-  top:-4px;
-  border-left:8px solid #e10600;
-  border-top:5px solid transparent;
-  border-bottom:5px solid transparent;
-}
-
-/* EXTRA */
-.bm-extra{
+/* GRID */
+.bm-grid{
   display:flex;
   justify-content:center;
-  gap:60px;
+  gap:50px;
   flex-wrap:wrap;
+  margin-bottom:70px;
 }
 
-.bm-highlight{
-  max-width:260px;
+/* CARDS */
+.bm-card{
+  max-width:250px;
   text-align:left;
   position:relative;
+  padding-left:20px;
 }
 
-.bm-highlight::before{
+.bm-card::before{
   content:"";
-  width:3px;
-  height:100%;
-  background:#e10600;
   position:absolute;
-  left:-12px;
-  top:0;
+  left:0;
+  top:5px;
+  width:4px;
+  height:60%;
+  background:#e10600;
 }
 
-.bm-highlight h5{
-  font-size:15px;
-  color:#e10600;
-  margin-bottom:8px;
+.bm-card h4{
+  font-size:16px;
   font-weight:900;
+  margin-bottom:8px;
 }
 
-.bm-highlight p{
+.bm-card p{
   font-size:13px;
-  color:#444;
   line-height:1.6;
+  color:#555;
 }
 
-/* MOBILE */
+/* LOOP */
+.bm-loop{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.loop-step{
+  font-size:13px;
+  font-weight:700;
+  padding:8px 14px;
+  border:1px solid #000;
+}
+
+.red-step{
+  border-color:#e10600;
+  color:#e10600;
+}
+
+.loop-arrow{
+  font-size:18px;
+  font-weight:900;
+  color:#e10600;
+}
+
+/* ================= MOBILE OPTIMIZATION ================= */
 @media(max-width:900px){
-  .bm-flow{
+
+  .bm-compact{
+    padding:80px 20px;
+  }
+
+  .bm-heading{
+    font-size:26px;
+    line-height:1.3;
+  }
+
+  .bm-summary{
+    font-size:14px;
+    margin-bottom:40px;
+  }
+
+  /* STACK CARDS CLEAN */
+  .bm-grid{
     flex-direction:column;
+    gap:35px;
+    margin-bottom:50px;
   }
-  .bm-line{
-    width:2px;
-    height:50px;
+
+  .bm-card{
+    max-width:100%;
+    padding-left:15px;
   }
-  .bm-line::after{
-    display:none;
+
+  .bm-card h4{
+    font-size:15px;
   }
-  .bm-title{
-    font-size:30px;
+
+  .bm-card p{
+    font-size:13px;
   }
+
+  /* LOOP BECOMES VERTICAL FLOW */
+  .bm-loop{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .loop-arrow{
+    transform:rotate(90deg);
+    font-size:16px;
+  }
+
+  .loop-step{
+    font-size:12px;
+    padding:8px 12px;
+  }
+
 }
 </style>
 <!-- ================= HOW IT WORKS ENHANCED ================= -->
@@ -2115,93 +2087,100 @@ function toggleView(){
 }
 </style>
 
-<!-- ================= FOUNDER SECTION ULTRA ================= -->
-<section class="founder-section">
+<!-- ================= FOUNDER SECTION PREMIUM ================= -->
+<section class="founder-premium">
 
-  <div class="founder-heading-wrap">
+  <div class="fp-container">
 
-  <span class="founder-mini">LEADERSHIP & STRATEGY</span>
+    <span class="fp-mini">LEADERSHIP & STRATEGIC DIRECTION</span>
 
-  <h2 class="founder-title">
-    Building <span class="highlight">Performance Infrastructure</span><br>
-    for the <span class="accent">Future of Hospitality Marketing</span>
-  </h2>
+    <h2 class="fp-title">
+      Architecting <span>Verified Revenue Systems</span><br>
+      for Modern Hospitality Growth
+    </h2>
 
-  <div class="founder-divider">
-    <span></span>
-  </div>
+    <div class="fp-divider">
+      <span></span>
+    </div>
 
-    <p class="founder-sub">
-      Influ-Pay is architected as performance infrastructure —
-      led by a founder committed to measurable economics,
-      verification integrity, and hospitality-first innovation.
+    <p class="fp-sub">
+      Influ-Pay is led by a founder focused on measurable economics,
+      structured payout logic, and verification-first infrastructure.
+      The mission is simple — eliminate speculative marketing and
+      transform creator partnerships into predictable revenue engines.
     </p>
 
-    <div class="founder-layout">
+    <div class="fp-layout">
 
-      <!-- LEFT PROFILE SIDE -->
-      <div class="founder-profile">
+      <!-- LEFT PROFILE -->
+      <div class="fp-profile">
 
-        <div class="founder-image">RP</div>
+        <div class="fp-avatar">RP</div>
 
         <h3>Rushabh Patel</h3>
-        <span class="founder-role">
-          Founder • Product Architect • Performance Systems Strategist
+        <span class="fp-role">
+          Founder • Product Architect • Revenue Systems Strategist
         </span>
 
-        <p class="founder-mini-bio">
-          Focused on building structured revenue engines that
-          align incentives between creators and hospitality operators.
+        <p class="fp-bio">
+          Designing performance settlement infrastructure
+          that aligns incentives between restaurants and creators
+          through validated economic logic.
         </p>
 
-        <div class="founder-quote">
-          “Marketing should operate as revenue infrastructure
+        <div class="fp-quote">
+          “Marketing should operate as revenue infrastructure —
           not speculative advertising.”
         </div>
 
       </div>
 
-      <!-- RIGHT CONTENT SIDE -->
-      <div class="founder-content">
+      <!-- RIGHT CONTENT -->
+      <div class="fp-content">
 
-        <h4 class="founder-section-title">Why Influ-Pay Exists</h4>
+        <div class="fp-block">
+          <h4>Platform Purpose</h4>
+          <p>
+            Influ-Pay was built to replace impression-based influencer marketing
+            with outcome-based settlement. Restaurants only release payouts
+            when real seated covers are verified, recorded, and validated.
+          </p>
+        </div>
 
-        <p>
-          Rushabh founded Influ-Pay to eliminate inefficiencies in traditional
-          influencer marketing where restaurants absorb high spend with
-          unpredictable return. The platform was designed to replace
-          impression-based payments with verified seated cover settlement
-          ensuring marketing directly funds real-world business outcomes.
-        </p>
+        <div class="fp-block">
+          <h4>Infrastructure Thinking</h4>
+          <p>
+            The product integrates dual-key attendance verification,
+            receipt tokenisation, and structured CPA logic into a
+            unified economic loop that protects both venue operators
+            and creator partners.
+          </p>
+        </div>
 
-        <h4 class="founder-section-title">Product Architecture Philosophy</h4>
+        <div class="fp-block">
+          <h4>Long-Term Positioning</h4>
+          <p>
+            Influ-Pay is positioned as performance infrastructure —
+            not a marketplace. It functions as a settlement engine
+            that aligns marketing spend directly with measurable
+            business growth.
+          </p>
+        </div>
 
-        <p>
-          Influ-Pay introduces a dual-key validation framework, receipt
-          tokenisation logic, and structured CPA economics that align
-          payout release strictly with verified attendance. This approach
-          transforms creator marketing from exposure-driven activity
-          into measurable acquisition infrastructure.
-        </p>
-
-        <h4 class="founder-section-title">Strategic Company Positioning</h4>
-
-        <p>
-          Rather than functioning as a simple creator marketplace,
-          Influ-Pay operates as performance settlement infrastructure
-          designed to reduce disputes, prevent fraud, protect venues,
-          and create transparent, automated financial workflows.
-        </p>
-
-        <h4 class="founder-section-title">Leadership Principles</h4>
-
-        <div class="founder-strengths">
-          <span>Performance-First Economics</span>
-          <span>Verification Integrity</span>
-          <span>Fraud-Resistant Systems</span>
-          <span>Operational Simplicity</span>
-          <span>Compliance-by-Design</span>
-          <span>Predictable ROI Models</span>
+        <!-- Strategic Metrics -->
+        <div class="fp-metrics">
+          <div>
+            <strong>Outcome-Based</strong>
+            <span>Settlement Logic</span>
+          </div>
+          <div>
+            <strong>Fraud-Resistant</strong>
+            <span>Verification Layer</span>
+          </div>
+          <div>
+            <strong>Predictable</strong>
+            <span>ROI Structure</span>
+          </div>
         </div>
 
       </div>
@@ -2213,287 +2192,255 @@ function toggleView(){
 </section>
 
 <style>
-  
-/* ================= BASE ================= */
-.founder-section{
+
+/* ================= SECTION BASE ================= */
+.founder-premium{
   background:#000000;
   color:#ffffff;
-  padding:160px 8%;
+  padding:130px 8%;
   position:relative;
-  overflow:hidden;
 }
 
-/* Large Background Word */
-.founder-bg-text{
-  position:absolute;
-  top:50%;
-  right:-100px;
-  font-size:240px;
-  font-weight:900;
-  color:rgba(255,0,0,0.04);
-  transform:rotate(-90deg) translateY(-50%);
-  pointer-events:none;
-}
-
-/* Left Red Accent Line */
-.founder-section::before{
+/* LEFT ACCENT BAR */
+.founder-premium::before{
   content:"";
   position:absolute;
   left:0;
   top:0;
+  width:5px;
   height:100%;
-  width:6px;
-  background:#ff0000;
+  background:#e10600;
 }
 
-/* Container */
-.founder-container{
-  max-width:1200px;
+/* CONTAINER */
+.fp-container{
+  max-width:1150px;
   margin:auto;
-  position:relative;
-  z-index:2;
-}
-
-/* Title */
-.founder-title{
-  font-size:46px;
-  font-weight:900;
-  text-align:center;
-  margin-bottom:15px;
-}
-
-/* Divider */
-.founder-divider{
-  width:110px;
-  height:4px;
-  background:#ff0000;
-  margin:0 auto 30px;
-}
-
-/* Subtitle */
-.founder-sub{
-  text-align:center;
-  max-width:800px;
-  margin:0 auto 90px;
-  font-size:16px;
-  color:#bbbbbb;
-  line-height:1.6;
-}
-
-/* Layout */
-.founder-layout{
-  display:grid;
-  grid-template-columns:350px 1fr;
-  gap:80px;
-  align-items:start;
-}
-
-/* Profile */
-.founder-profile{
-  text-align:center;
-}
-
-.founder-image{
-  width:160px;
-  height:160px;
-  background:#ff0000;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:55px;
-  font-weight:900;
-  margin:0 auto 25px;
-  box-shadow:0 0 45px rgba(255,0,0,0.4);
-}
-
-.founder-profile h3{
-  font-size:24px;
-  margin-bottom:8px;
-}
-
-.founder-role{
-  display:block;
-  font-size:13px;
-  color:#ff0000;
-  font-weight:600;
-  margin-bottom:20px;
-}
-
-.founder-mini-bio{
-  font-size:14px;
-  color:#cccccc;
-  margin-bottom:25px;
-  line-height:1.6;
-}
-
-/* Quote */
-.founder-quote{
-  font-size:14px;
-  font-style:italic;
-  border-left:3px solid #ff0000;
-  padding-left:15px;
-  color:#dddddd;
-}
-
-/* Right Content */
-.founder-section-title{
-  font-size:16px;
-  font-weight:700;
-  color:#ff0000;
-  margin:25px 0 10px;
-}
-
-.founder-content p{
-  font-size:15px;
-  line-height:1.8;
-  margin-bottom:18px;
-  color:#dddddd;
-}
-
-/* Strength Tags */
-.founder-strengths{
-  margin-top:25px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:15px;
-}
-
-.founder-strengths span{
-  border:1px solid #ff0000;
-  padding:8px 18px;
-  font-size:13px;
-  font-weight:600;
-  transition:0.3s ease;
-}
-
-.founder-strengths span:hover{
-  background:#ff0000;
-  color:#000000;
-}
-/* HEADING WRAP */
-.founder-heading-wrap{
-  text-align:center;
-  margin-bottom:80px;
 }
 
 /* MINI LABEL */
-.founder-mini{
+.fp-mini{
   font-size:12px;
-  letter-spacing:0.4em;
-  color:#ff0000;
+  letter-spacing:0.35em;
+  color:#e10600;
   font-weight:700;
 }
 
 /* TITLE */
-.founder-title{
-  font-size:48px;
+.fp-title{
+  font-size:44px;
   font-weight:900;
+  margin:18px 0 18px;
   line-height:1.2;
-  margin:20px 0 25px;
-  color:#ffffff;
 }
 
-/* WHITE → RED STYLE */
-.founder-title .highlight{
-  color:#ffffff;
+.fp-title span{
+  color:#e10600;
 }
 
-.founder-title .accent{
-  color:#ff0000;
-}
-
-/* PREMIUM DIVIDER */
-.founder-divider{
-  width:140px;
+/* DIVIDER */
+.fp-divider{
+  width:130px;
   height:4px;
-  background:#f8f8f8;
-  margin:0 auto;
+  background:#333;
+  margin-bottom:30px;
   position:relative;
-  border-radius:10px;
 }
 
-.founder-divider span{
+.fp-divider span{
   position:absolute;
   left:0;
-  top:0;
+  width:60px;
   height:100%;
-  width:50px;
-  background:#ff0000;
-  border-radius:10px;
+  background:#e10600;
 }
 
-/* ================= MOBILE OPTIMISATION ================= */
+/* SUB */
+.fp-sub{
+  max-width:760px;
+  font-size:15px;
+  line-height:1.7;
+  color:#cccccc;
+  margin-bottom:60px;
+}
+
+/* LAYOUT */
+.fp-layout{
+  display:grid;
+  grid-template-columns:320px 1fr;
+  gap:70px;
+  align-items:start;
+}
+
+/* PROFILE */
+.fp-profile{
+  text-align:center;
+}
+
+.fp-avatar{
+  width:140px;
+  height:140px;
+  background:#e10600;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:50px;
+  font-weight:900;
+  margin:0 auto 20px;
+}
+
+.fp-profile h3{
+  font-size:22px;
+  margin-bottom:5px;
+}
+
+.fp-role{
+  display:block;
+  font-size:13px;
+  color:#e10600;
+  margin-bottom:20px;
+}
+
+.fp-bio{
+  font-size:14px;
+  color:#bbbbbb;
+  margin-bottom:20px;
+}
+
+.fp-quote{
+  font-size:13px;
+  font-style:italic;
+  border-left:3px solid #e10600;
+  padding-left:12px;
+  color:#dddddd;
+}
+
+/* CONTENT */
+.fp-block{
+  margin-bottom:25px;
+}
+
+.fp-block h4{
+  font-size:15px;
+  font-weight:800;
+  color:#e10600;
+  margin-bottom:8px;
+}
+
+.fp-block p{
+  font-size:14px;
+  line-height:1.7;
+  color:#dddddd;
+}
+
+/* METRICS */
+.fp-metrics{
+  display:flex;
+  gap:30px;
+  margin-top:25px;
+  flex-wrap:wrap;
+}
+
+.fp-metrics div{
+  border:1px solid #333;
+  padding:14px 18px;
+  font-size:12px;
+  text-align:left;
+}
+
+.fp-metrics strong{
+  display:block;
+  color:#e10600;
+  font-size:13px;
+}
+
+.fp-metrics span{
+  color:#cccccc;
+}
+
+/* ================= ENHANCED MOBILE OPTIMISATION ================= */
 @media(max-width:900px){
 
-  /* Section Padding */
-  .founder-section{
-    padding:90px 20px;
+  /* Section Padding Reduced */
+  .founder-premium{
+    padding:70px 18px;
   }
 
-  /* Title */
-  .founder-title{
-    font-size:26px;
-    line-height:1.3;
+  /* Title Smaller & Balanced */
+  .fp-title{
+    font-size:24px;
+    line-height:1.35;
     margin-bottom:15px;
+  }
+
+  /* Mini Label */
+  .fp-mini{
+    font-size:10px;
+    letter-spacing:0.25em;
   }
 
   /* Subtitle */
-  .founder-sub{
-    font-size:14px;
-    margin-bottom:40px;
-    padding:0 10px;
+  .fp-sub{
+    font-size:13px;
+    line-height:1.6;
+    margin-bottom:35px;
   }
 
   /* Layout Stack */
-  .founder-layout{
+  .fp-layout{
     grid-template-columns:1fr;
-    gap:40px;
+    gap:35px;
     text-align:center;
   }
 
-  /* Profile */
-  .founder-profile{
-    margin-bottom:10px;
+  /* Profile Section */
+  .fp-avatar{
+    width:100px;
+    height:100px;
+    font-size:36px;
   }
 
-  .founder-image{
-    width:110px;
-    height:110px;
-    font-size:45px;
-    margin-bottom:15px;
-  }
-
-  .founder-profile h3{
+  .fp-profile h3{
     font-size:18px;
   }
 
-  .founder-role{
-    font-size:12px;
+  .fp-role{
+    font-size:11px;
   }
 
-  /* Content Paragraphs */
-  .founder-content p{
+  .fp-bio{
+    font-size:13px;
+  }
+
+  .fp-quote{
+    font-size:12px;
+    padding-left:10px;
+  }
+
+  /* Content Blocks */
+  .fp-block h4{
     font-size:14px;
-    line-height:1.7;
-    margin-bottom:16px;
+  }
+
+  .fp-block p{
+    font-size:13px;
+    line-height:1.6;
     text-align:left;
   }
 
-  /* Strength Tags */
-  .founder-strengths{
-    justify-content:center;
-    gap:10px;
+  /* Metrics Grid Improved */
+  .fp-metrics{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
+    margin-top:20px;
   }
 
-  .founder-strengths span{
+  .fp-metrics div{
+    padding:10px 14px;
     font-size:12px;
-    padding:6px 12px;
-  }
-
-  /* Remove Background Big Text */
-  .founder-bg-text{
-    display:none;
+    text-align:left;
   }
 
 }
