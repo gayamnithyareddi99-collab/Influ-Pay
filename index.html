@@ -928,189 +928,324 @@ function toggleView(){
   }
 }
 </script>
-
-<!-- ================= WHY INFLU-PAY (BLACK VERSION) ================= -->
-<section class="why-influ-dark">
-
-  <!-- Geometric Red Background Shapes -->
-  <div class="shape-top"></div>
-  <div class="shape-bottom"></div>
+<!-- ================= WHY INFLU-PAY ================= -->
+<section class="why-section">
 
   <div class="why-container">
 
-    <span class="why-tag">WHY INFLU-PAY</span>
+    <!-- Mini Heading -->
+    <span class="why-eyebrow">
+      PERFORMANCE INFRASTRUCTURE FOR HOSPITALITY
+    </span>
 
+    <!-- Main Title -->
     <h2 class="why-title">
-      Influencer Marketing<br>
-      <span>Rebuilt for Revenue</span>
+      Why <span>Influ-Pay</span> Wins
     </h2>
 
-    <div class="why-divider"></div>
+<div class="why-divider-wrap">
+  <span class="line"></span>
+  <span class="dot"></span>
+  <span class="line"></span>
+</div>
 
-    <p class="why-intro">
-      Influ-Pay transforms influencer marketing from a branding expense
-      into a measurable revenue engine. Restaurants no longer pay for
-      exposure — they pay for verified seated customers.
+    <!-- Sub Headline -->
+    <h3 class="why-subheadline">
+      Revenue-Aligned Creator Marketing — Built for Verified Outcomes
+    </h3>
+
+    <!-- Supporting Paragraph -->
+    <p class="why-subtitle">
+      Influ-Pay transforms influencer marketing into a structured,
+      fraud-resistant, and economically aligned performance engine
+      where restaurants pay only for validated dining outcomes —
+      not impressions, not reach, not speculation.
     </p>
 
     <div class="why-grid">
 
-      <div class="why-point">
-        <h3>Outcome-Based Settlement</h3>
+      <!-- ITEM 1 -->
+      <div class="why-item">
+        <div class="why-number">01</div>
+        <h3>Seated Covers, Not Vanity Metrics</h3>
         <p>
-          Payments trigger only when a verified customer attends.
-          No impressions. No vanity metrics. Pure performance.
+          We redefine the unit of value. Restaurants don’t earn from likes —
+          they earn from seated guests. Influ-Pay anchors payouts to
+          verified seated covers and attended bookings,
+          aligning marketing spend directly with operational revenue.
         </p>
       </div>
 
-      <div class="why-point">
+      <!-- ITEM 2 -->
+      <div class="why-item">
+        <div class="why-number">02</div>
+        <h3>Dual-Key Attendance Proof</h3>
+        <p>
+          Each conversion is verified using venue confirmation
+          combined with customer-side ephemeral proof.
+          This creates tamper-evident receipts that dramatically reduce
+          fraud, replay abuse, and attribution disputes.
+        </p>
+      </div>
+
+      <!-- ITEM 3 -->
+      <div class="why-item">
+        <div class="why-number">03</div>
+        <h3>Capacity-Aware Pricing</h3>
+        <p>
+          Influ-Pay introduces yield-managed CPA.
+          Restaurants can pay more for hard-to-fill time slots
+          and less for peak demand, transforming influencer marketing
+          into a dynamic revenue optimisation tool.
+        </p>
+      </div>
+
+      <!-- ITEM 4 -->
+      <div class="why-item">
+        <div class="why-number">04</div>
+        <h3>Settlement Finality Built In</h3>
+        <p>
+          Every conversion follows a defined lifecycle:
+          Pending → Verified → Settled.
+          Clear dispute windows and clawback logic replace
+          vague negotiations with deterministic payout rules.
+        </p>
+      </div>
+
+      <!-- ITEM 5 -->
+      <div class="why-item">
+        <div class="why-number">05</div>
+        <h3>Compliance by Design</h3>
+        <p>
+          Disclosure controls, audit logs, and automated compliance linting
+          prevent risky claims before publication.
+          Compliance is embedded as infrastructure —
+          not left to manual oversight.
+        </p>
+      </div>
+
+      <!-- ITEM 6 -->
+      <div class="why-item">
+        <div class="why-number">06</div>
         <h3>Fraud-Resistant Architecture</h3>
         <p>
-          Dual-key verification merges venue confirmation with
-          customer validation to eliminate false redemptions.
-        </p>
-      </div>
-
-      <div class="why-point">
-        <h3>Capacity-Aware Intelligence</h3>
-        <p>
-          Dynamic CPA pricing optimises off-peak time slots,
-          increasing utilisation and revenue stability.
-        </p>
-      </div>
-
-      <div class="why-point">
-        <h3>Aligned Creator Incentives</h3>
-        <p>
-          Creators earn based on real-world impact,
-          ensuring long-term alignment with restaurant growth.
+          Replay prevention, velocity monitoring,
+          anomaly clustering, and venue baseline modelling
+          protect both creators and restaurants,
+          keeping marketplace integrity high.
         </p>
       </div>
 
     </div>
 
   </div>
+
 </section>
 
 <style>
-:root{
-  --black:#111111;
-  --red:#e10600;
-  --white:#ffffff;
+  /* Divider Wrapper */
+.why-divider-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  margin:30px auto 35px auto;
 }
 
-/* SECTION */
-.why-influ-dark{
-  background:var(--black);
-  color:var(--white);
-  padding:160px 8%;
+/* Side Lines */
+.why-divider-wrap .line{
+  width:80px;
+  height:2px;
+  background:#ff0000;
+  opacity:0.8;
+}
+
+/* Center Dot */
+.why-divider-wrap .dot{
+  width:10px;
+  height:10px;
+  background:#ff0000;
+  border-radius:50%;
+}
+/* Eyebrow */
+.why-eyebrow{
+  display:block;
+  text-align:center;
+  color:#ff0000;
+  font-size:12px;
+  letter-spacing:3px;
+  font-weight:700;
+  margin-bottom:20px;
+}
+
+/* Title */
+.why-title{
+  font-size:46px;
+  font-weight:800;
+  text-align:center;
+  margin-bottom:18px;
+}
+
+.why-title span{
+  color:#ff0000;
+}
+
+/* Divider */
+.why-divider{
+  width:100px;
+  height:4px;
+  background:#ff0000;
+  margin:0 auto 25px auto;
+  border-radius:2px;
+}
+
+/* Subheadline */
+.why-subheadline{
+  text-align:center;
+  font-size:18px;
+  font-weight:600;
+  color:#ffffff;
+  margin-bottom:18px;
+}
+
+/* Subtitle */
+.why-subtitle{
+  text-align:center;
+  max-width:750px;
+  margin:0 auto 80px auto;
+  color:#cccccc;
+  line-height:1.7;
+  font-size:15px;
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .why-title{font-size:32px;}
+  .why-subheadline{font-size:16px;}
+}
+/* ================= WHY SECTION ================= */
+.why-section{
+  background:#000000;
+  color:#ffffff;
+  padding:120px 8%;
   position:relative;
-  overflow:hidden;
 }
 
-/* Red geometric accents */
-.shape-top{
+/* Subtle Red Glow Effect */
+.why-section::before{
+  content:"";
   position:absolute;
-  top:-120px;
-  right:-120px;
-  width:350px;
-  height:350px;
-  background:var(--red);
-  transform:rotate(45deg);
-  opacity:0.08;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:radial-gradient(circle at top right, rgba(255,0,0,0.08), transparent 60%);
+  pointer-events:none;
 }
 
-.shape-bottom{
-  position:absolute;
-  bottom:-150px;
-  left:-150px;
-  width:300px;
-  height:300px;
-  background:var(--red);
-  transform:rotate(45deg);
-  opacity:0.06;
-}
-
+/* Container */
 .why-container{
-  max-width:1100px;
+  max-width:1200px;
   margin:auto;
   position:relative;
   z-index:2;
 }
 
-/* TAG */
-.why-tag{
-  font-size:12px;
-  letter-spacing:0.4em;
-  font-weight:700;
-  color:var(--red);
-}
-
-/* TITLE */
+/* Title */
 .why-title{
-  font-size:52px;
-  font-weight:900;
-  line-height:1.1;
-  margin:25px 0;
+  font-size:44px;
+  font-weight:800;
+  text-align:center;
+  margin-bottom:15px;
+  letter-spacing:1px;
 }
 
 .why-title span{
-  color:var(--red);
+  color:#ff0000;
 }
 
 /* Divider */
 .why-divider{
-  width:120px;
+  width:90px;
   height:4px;
-  background:var(--red);
-  margin:30px 0 50px;
+  background:#ff0000;
+  margin:0 auto 30px;
 }
 
-/* Intro */
-.why-intro{
-  font-size:18px;
-  line-height:1.8;
+/* Subtitle */
+.why-subtitle{
+  text-align:center;
+  max-width:750px;
+  margin:0 auto 80px;
   color:#cccccc;
-  margin-bottom:70px;
-  max-width:850px;
+  line-height:1.7;
+  font-size:16px;
 }
 
-/* GRID */
+/* Grid */
 .why-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
   gap:60px;
 }
 
-/* POINT */
-.why-point h3{
+/* Item */
+.why-item{
+  position:relative;
+  padding-left:60px;
+}
+
+/* Red Number */
+.why-number{
+  position:absolute;
+  left:0;
+  top:0;
+  font-size:28px;
+  font-weight:800;
+  color:#ff0000;
+}
+
+/* Heading */
+.why-item h3{
   font-size:20px;
   margin-bottom:15px;
-  position:relative;
+  font-weight:700;
 }
 
-.why-point h3::after{
-  content:"";
-  display:block;
-  width:40px;
-  height:3px;
-  background:var(--red);
-  margin-top:8px;
-}
-
-.why-point p{
-  font-size:16px;
+/* Paragraph */
+.why-item p{
+  font-size:15px;
   line-height:1.7;
   color:#dddddd;
 }
 
+/* Hover Effect */
+.why-item:hover h3{
+  color:#ff0000;
+  transition:0.3s;
+}
+
 /* Responsive */
 @media(max-width:900px){
-  .why-title{font-size:36px;}
-  .why-influ-dark{padding:120px 20px;}
+  .why-title{
+    font-size:32px;
+  }
+
+  .why-grid{
+    gap:40px;
+  }
+
+  .why-item{
+    padding-left:45px;
+  }
+
+  .why-number{
+    font-size:22px;
+  }
 }
+
 </style>
-</section>
+
 <!-- ================= BUSINESS MODEL SECTION ================= -->
 <section class="business-model-white">
 
