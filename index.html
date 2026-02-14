@@ -1,0 +1,2911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Influ-Pay | Performance Creator Marketplace</title>
+
+<style>
+:root{
+  --black:#111111;
+  --red:#e10600;
+  --white:#ffffff;
+}
+
+/* GLOBAL */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
+body{background:var(--white);color:var(--black);overflow-x:hidden;}
+section{padding:120px 8%;position:relative;}
+
+/* ================= HERO ================= */
+.hero{
+  background:var(--white);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+.hero-left{
+  max-width:600px;
+}
+
+.hero h1{
+  font-size:60px;
+  font-weight:900;
+  line-height:1.1;
+}
+
+.hero h1 span{
+  color:var(--red);
+}
+
+.hero p{
+  margin:30px 0;
+  font-size:18px;
+  line-height:1.6;
+}
+
+.hero-btn{
+  padding:16px 40px;
+  background:var(--red);
+  color:var(--white);
+  border:none;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.3s;
+}
+.hero-btn:hover{
+  background:var(--black);
+}
+
+/* Decorative Shapes */
+.hero::after{
+  content:"";
+  position:absolute;
+  top:0;
+  right:0;
+  width:350px;
+  height:350px;
+  background:var(--red);
+  clip-path:polygon(100% 0, 0 0, 100% 100%);
+}
+
+/* ================= ABOUT ================= */
+.about{
+  background:var(--black);
+  color:var(--white);
+}
+
+.about h2{
+  font-size:40px;
+  font-weight:900;
+}
+
+.divider{
+  width:100px;
+  height:4px;
+  background:var(--red);
+  margin:20px 0 40px;
+}
+
+.about p{
+  font-size:18px;
+  line-height:1.7;
+  margin-bottom:20px;
+  max-width:900px;
+}
+
+/* ================= FEATURES ================= */
+.features{
+  background:var(--white);
+}
+
+.features h2{
+  font-size:40px;
+  font-weight:900;
+}
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:40px;
+  margin-top:60px;
+}
+
+.feature-item{
+  padding:30px;
+  border-left:6px solid var(--red);
+  background:#f8f8f8;
+  transition:0.3s;
+}
+
+.feature-item:hover{
+  transform:translateY(-8px);
+}
+
+.feature-item h3{
+  margin-bottom:15px;
+}
+
+/* ================= SOLUTION FLOW ================= */
+.solution{
+  background:var(--black);
+  color:var(--white);
+}
+
+.solution h2{
+  font-size:40px;
+}
+
+.flow{
+  margin-top:60px;
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+}
+
+.flow-step{
+  border-left:5px solid var(--red);
+  padding-left:25px;
+}
+
+.flow-step h4{
+  color:var(--red);
+  margin-bottom:10px;
+}
+
+/* ================= CTA ================= */
+.cta{
+  background:var(--red);
+  color:var(--white);
+  text-align:center;
+}
+
+.cta h2{
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.cta button{
+  padding:18px 50px;
+  background:var(--black);
+  color:var(--white);
+  border:none;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.3s;
+}
+.cta button:hover{
+  background:var(--white);
+  color:var(--black);
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:var(--black);
+  color:var(--white);
+  text-align:center;
+  padding:40px;
+  font-size:14px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .hero h1{font-size:40px;}
+}
+</style>
+</head>
+
+<body>
+<!-- ================= INFLU-PAY NAVBAR ================= -->
+<nav class="influpay-navbar">
+
+  <div class="logo">
+    <span>Influ</span>-Pay
+  </div>
+
+  <!-- Desktop Menu -->
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#features">Features</a>
+    <a href="#model">Business Model</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="nav-cta">Contact</a>
+  </div>
+
+  <!-- Mobile Toggle -->
+  <div class="menu-toggle" onclick="toggleMenu()" id="toggleBtn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+</nav>
+
+<!-- Mobile Fullscreen Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="closeMenu()">Home</a>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#features" onclick="closeMenu()">Features</a>
+  <a href="#model" onclick="closeMenu()">Business Model</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="#contact" class="mobile-cta" onclick="closeMenu()">Contact</a>
+</div>
+
+<style>
+:root{
+  --red:#e10600;
+  --black:#111111;
+  --white:#ffffff;
+}
+
+/* NAVBAR */
+.influpay-navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  height:80px;
+  background:var(--black);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 8%;
+  z-index:1000;
+}
+
+/* LOGO */
+.logo{
+  font-size:24px;
+  font-weight:900;
+  color:var(--white);
+}
+.logo span{
+  color:var(--red);
+}
+
+/* DESKTOP LINKS */
+.nav-links{
+  display:flex;
+  gap:35px;
+  align-items:center;
+}
+
+.nav-links a{
+  color:var(--white);
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+  position:relative;
+  transition:0.3s;
+}
+
+/* Underline hover */
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  bottom:-6px;
+  left:0;
+  width:0%;
+  height:2px;
+  background:var(--red);
+  transition:0.3s;
+}
+.nav-links a:hover::after{
+  width:100%;
+}
+
+/* CTA */
+.nav-cta{
+  background:var(--red);
+  padding:10px 22px;
+  border-radius:4px;
+}
+.nav-cta::after{ display:none; }
+.nav-cta:hover{
+  background:#b00000;
+}
+
+/* MOBILE TOGGLE */
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  gap:6px;
+  cursor:pointer;
+}
+
+.menu-toggle span{
+  width:28px;
+  height:3px;
+  background:var(--white);
+  transition:0.4s;
+}
+
+/* Mobile Menu */
+.mobile-menu{
+  position:fixed;
+  inset:0;
+  background:rgba(17,17,17,0.97);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:35px;
+  transform:translateY(-100%);
+  transition:0.5s ease;
+  z-index:999;
+}
+
+.mobile-menu a{
+  color:var(--white);
+  font-size:26px;
+  font-weight:700;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.mobile-menu a:hover{
+  color:var(--red);
+}
+
+.mobile-cta{
+  background:var(--red);
+  padding:12px 28px;
+}
+
+/* Active State */
+.mobile-menu.show{
+  transform:translateY(0);
+}
+
+/* Hamburger to X */
+.menu-toggle.active span:nth-child(1){
+  transform:rotate(45deg) translate(5px,5px);
+}
+.menu-toggle.active span:nth-child(2){
+  opacity:0;
+}
+.menu-toggle.active span:nth-child(3){
+  transform:rotate(-45deg) translate(6px,-6px);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .nav-links{ display:none; }
+  .menu-toggle{ display:flex; }
+}
+</style>
+
+<script>
+const menu = document.getElementById("mobileMenu");
+const toggleBtn = document.getElementById("toggleBtn");
+
+function toggleMenu(){
+  menu.classList.toggle("show");
+  toggleBtn.classList.toggle("active");
+  document.body.classList.toggle("no-scroll");
+}
+
+function closeMenu(){
+  menu.classList.remove("show");
+  toggleBtn.classList.remove("active");
+  document.body.classList.remove("no-scroll");
+}
+</script>
+<!-- ================= ULTRA HOME SECTION ================= -->
+<section class="home-influpay" id="home">
+
+  <!-- Decorative Background Elements -->
+  <div class="bg-red-shape top-shape"></div>
+  <div class="bg-red-shape bottom-shape"></div>
+  <div class="bg-black-accent"></div>
+  <div class="diagonal-overlay"></div>
+
+  <!-- NEW: Red Ribbon Strip -->
+  <div class="ribbon-strip"></div>
+
+ 
+
+  <!-- Dot Patterns -->
+  <div class="dot-pattern"></div>
+  <div class="dot-pattern right-dots"></div>
+
+  <!-- Micro Triangles -->
+  <div class="mini-triangle t1"></div>
+  <div class="mini-triangle t2"></div>
+
+  <div class="home-content fade-in">
+
+    <div class="hero-wrapper">
+
+</div>
+<!-- NEW ACTION BADGE + TOGGLE -->
+<div class="hero-actions">
+
+  <!-- INVESTOR STATUS BADGE -->
+  <div class="status-badge">
+    LIVE PLATFORM ACCESS
+  </div>
+
+</div>
+
+    <h1 class="main-title">
+      PERFORMANCE-BASED<br>
+      <span>CREATOR MARKETPLACE</span><br>
+      FOR RESTAURANTS
+    </h1>
+
+    <div class="title-underline"></div>
+
+    <p class="home-description">
+      Influ-Pay transforms local creator marketing into a measurable revenue engine.
+      Restaurants pay only for verified outcomes — seated covers, attended bookings,
+      and in-venue redemptions — not impressions.
+    </p>
+
+    <p class="home-description">
+      The platform aligns incentives between restaurants and creators,
+      protecting revenue while driving real customer traffic.
+    </p>
+
+    <div class="home-buttons">
+      <button class="btn-primary">Launch Campaign</button>
+      <button class="platform-toggle" id="platformBtn">
+  <span class="btn-text">VIEW PLATFORM</span>
+</button>
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+:root{
+  --red:#e10600;
+  --black:#111111;
+  --white:#ffffff;
+}
+/* ===== HERO ACTIONS ===== */
+.hero-actions{
+  display:flex;
+  align-items:center;
+  gap:30px;
+  margin-top:30px;
+}
+
+/* STATUS BADGE */
+.status-badge{
+  background:var(--red);
+  color:var(--white);
+  padding:10px 22px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:2px;
+  border-radius:40px;
+}
+
+/* TOGGLE BUTTON */
+.view-toggle{
+  width:110px;
+  height:40px;
+  background:var(--black);
+  border:2px solid var(--red);
+  border-radius:50px;
+  position:relative;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  padding:0 8px;
+  transition:0.3s ease;
+}
+
+/* TOGGLE CIRCLE */
+.toggle-circle{
+  width:24px;
+  height:24px;
+  background:var(--white);
+  border-radius:50%;
+  transition:0.3s ease;
+}
+
+/* TEXT */
+.toggle-text{
+  position:absolute;
+  right:15px;
+  font-size:12px;
+  font-weight:800;
+  color:var(--white);
+}
+
+/* ACTIVE STATE */
+.view-toggle.active{
+  background:var(--red);
+}
+
+.view-toggle.active .toggle-circle{
+  transform:translateX(60px);
+  background:var(--black);
+}
+
+.view-toggle.active .toggle-text{
+  content:"ON";
+}
+/* BUTTON BASE */
+.platform-toggle{
+  position:relative;
+  padding:16px 50px;
+  font-weight:800;
+  font-size:14px;
+  letter-spacing:1px;
+  border:2px solid var(--black);
+  cursor:pointer;
+  background:var(--white);
+  color:var(--black);
+  overflow:hidden;
+  transition:0.4s ease;
+}
+
+/* ON STATE */
+.platform-toggle.active{
+  background:var(--black);
+  color:var(--white);
+}
+
+/* Smooth depth */
+.platform-toggle:hover{
+  transform:translateY(-3px);
+}
+
+/* Inner subtle shine effect */
+.platform-toggle::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border:1px solid rgba(0,0,0,0.1);
+  pointer-events:none;
+}
+/* SECTION */
+.home-influpay{
+  position:relative;
+  min-height:100vh;
+  background:var(--white);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  padding:140px 8%;
+}
+
+/* Existing Red Shapes */
+.bg-red-shape{
+  position:absolute;
+  width:420px;
+  height:420px;
+  background:var(--red);
+  transform:rotate(45deg);
+  z-index:0;
+}
+
+.top-shape{ top:-200px; right:-150px; }
+.bottom-shape{ bottom:-220px; left:-180px; }
+
+/* Black Accent */
+.bg-black-accent{
+  position:absolute;
+  bottom:0;
+  right:0;
+  width:300px;
+  height:300px;
+  background:var(--black);
+  clip-path:polygon(100% 0, 0 100%, 100% 100%);
+  opacity:0.95;
+}
+
+/* Diagonal Light Overlay */
+.diagonal-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    135deg,
+    transparent 60%,
+    rgba(0,0,0,0.03) 60%
+  );
+}
+
+/* NEW: Ribbon Strip */
+.ribbon-strip{
+  position:absolute;
+  top:0;
+  width:100%;
+  height:6px;
+  background:var(--red);
+}
+
+
+/* Dot Pattern */
+.dot-pattern{
+  position:absolute;
+  top:50px;
+  left:50px;
+  width:180px;
+  height:180px;
+  background-image: radial-gradient(var(--black) 1.2px, transparent 1.2px);
+  background-size:14px 14px;
+  opacity:0.2;
+}
+.right-dots{
+  top:auto;
+  left:auto;
+  bottom:80px;
+  right:60px;
+  opacity:0.15;
+}
+
+/* Mini Triangles */
+.mini-triangle{
+  position:absolute;
+  width:0;
+  height:0;
+  border-left:20px solid transparent;
+  border-right:20px solid transparent;
+  border-bottom:30px solid var(--black);
+  opacity:0.2;
+}
+.t1{ top:20%; left:70%; }
+.t2{ bottom:25%; left:30%; }
+
+/* Content */
+.home-content{
+  position:relative;
+  z-index:2;
+  max-width:900px;
+}
+
+/* Fade Animation */
+.fade-in{
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.8s ease;
+}
+.fade-in.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Text */
+.brand-mini{
+  font-size:22px;
+  font-weight:700;
+  margin-bottom:20px;
+  color:#0d3b2e;
+}
+
+.main-title{
+  font-size:64px;
+  font-weight:900;
+  color:var(--black);
+  line-height:1.05;
+  margin-bottom:20px;
+}
+
+.main-title span{
+  color:var(--red);
+}
+
+.title-underline{
+  width:140px;
+  height:4px;
+  background:var(--black);
+  margin:20px 0 30px;
+}
+
+.home-description{
+  font-size:18px;
+  line-height:1.7;
+  margin-bottom:20px;
+  color:#333;
+}
+
+/* Buttons */
+.home-buttons{
+  margin-top:40px;
+  display:flex;
+  gap:20px;
+}
+
+.btn-primary{
+  background:var(--red);
+  color:var(--white);
+  padding:16px 40px;
+  border:none;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn-primary:hover{
+  background:#b00000;
+}
+
+.btn-outline{
+  background:transparent;
+  border:2px solid var(--black);
+  padding:16px 40px;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn-outline:hover{
+  background:var(--black);
+  color:var(--white);
+}
+/* TOGGLE BUTTON STYLE */
+.toggle-wrapper{
+  display:flex;
+  align-items:center;
+}
+
+.toggle-btn{
+  position:relative;
+  width:220px;
+  height:55px;
+  background:#ffffff;
+  border:2px solid #111111;
+  border-radius:50px;
+  cursor:pointer;
+  overflow:hidden;
+  transition:0.1s ease;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+.toggle-text{
+  position:relative;
+  z-index:2;
+  color:#111111;
+  font-size:14px;
+}
+
+.toggle-circle{
+  position:absolute;
+  top:3px;
+  left:3px;
+  width:47px;
+  height:47px;
+  background:#111111;
+  border-radius:50%;
+  transition:0.3s ease;
+}
+
+/* ACTIVE (ON STATE) */
+.toggle-btn.active{
+  background:#111111;
+}
+
+.toggle-btn.active .toggle-circle{
+  left:168px;
+  background:#ffffff;
+}
+
+.toggle-btn.active .toggle-text{
+  color:#ffffff;
+}
+/* ================= RESPONSIVE OPTIMIZATION ================= */
+
+/* Large Tablets */
+@media(max-width:1200px){
+  .main-title{
+    font-size:48px;
+  }
+
+  .watermark{
+    font-size:120px;
+    right:-100px;
+  }
+}
+
+/* Tablets */
+@media(max-width:900px){
+
+  .home-influpay{
+    padding:120px 6%;
+  }
+
+  .main-title{
+    font-size:34px;
+    line-height:1.15;
+  }
+
+  .home-content{
+    text-align:center;
+    max-width:100%;
+  }
+
+  .title-underline{
+    margin:20px auto 30px;
+  }
+
+  .home-buttons{
+    flex-direction:column;
+    align-items:center;
+    gap:16px;
+  }
+
+  .hero-actions{
+    justify-content:center;
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .status-badge{
+    font-size:11px;
+    padding:8px 18px;
+  }
+
+  .platform-toggle{
+    width:220px;
+  }
+
+  .bg-red-shape{
+    width:300px;
+    height:300px;
+  }
+
+  .dot-pattern{
+    width:120px;
+    height:120px;
+  }
+
+  .mini-triangle{
+    display:none;
+  }
+
+  .watermark{
+    display:none;
+  }
+}
+
+/* Small Phones */
+@media(max-width:480px){
+
+  .home-influpay{
+    padding:100px 5%;
+  }
+
+  .main-title{
+    font-size:28px;
+  }
+
+  .home-description{
+    font-size:15px;
+  }
+
+  .btn-primary,
+  .platform-toggle{
+    width:100%;
+    padding:14px 0;
+  }
+
+  .status-badge{
+    font-size:10px;
+    padding:6px 14px;
+  }
+
+  .dot-pattern{
+    display:none;
+  }
+
+  .bg-red-shape{
+    width:220px;
+    height:220px;
+  }
+}
+</style>
+
+<script>
+window.addEventListener("scroll",()=>{
+  document.querySelector(".fade-in").classList.add("show");
+});
+
+const btn = document.getElementById("platformBtn");
+
+/* Automatic ON/OFF Toggle */
+setInterval(()=>{
+  btn.classList.toggle("active");
+}, 2000);
+function toggleView(){
+  const toggle = document.getElementById("viewToggle");
+  const text = toggle.querySelector(".toggle-text");
+
+  toggle.classList.toggle("active");
+
+  if(toggle.classList.contains("active")){
+    text.innerText = "ON";
+  } else {
+    text.innerText = "OFF";
+  }
+}
+</script>
+
+<!-- ================= WHY INFLU-PAY (BLACK VERSION) ================= -->
+<section class="why-influ-dark">
+
+  <!-- Geometric Red Background Shapes -->
+  <div class="shape-top"></div>
+  <div class="shape-bottom"></div>
+
+  <div class="why-container">
+
+    <span class="why-tag">WHY INFLU-PAY</span>
+
+    <h2 class="why-title">
+      Influencer Marketing<br>
+      <span>Rebuilt for Revenue</span>
+    </h2>
+
+    <div class="why-divider"></div>
+
+    <p class="why-intro">
+      Influ-Pay transforms influencer marketing from a branding expense
+      into a measurable revenue engine. Restaurants no longer pay for
+      exposure — they pay for verified seated customers.
+    </p>
+
+    <div class="why-grid">
+
+      <div class="why-point">
+        <h3>Outcome-Based Settlement</h3>
+        <p>
+          Payments trigger only when a verified customer attends.
+          No impressions. No vanity metrics. Pure performance.
+        </p>
+      </div>
+
+      <div class="why-point">
+        <h3>Fraud-Resistant Architecture</h3>
+        <p>
+          Dual-key verification merges venue confirmation with
+          customer validation to eliminate false redemptions.
+        </p>
+      </div>
+
+      <div class="why-point">
+        <h3>Capacity-Aware Intelligence</h3>
+        <p>
+          Dynamic CPA pricing optimises off-peak time slots,
+          increasing utilisation and revenue stability.
+        </p>
+      </div>
+
+      <div class="why-point">
+        <h3>Aligned Creator Incentives</h3>
+        <p>
+          Creators earn based on real-world impact,
+          ensuring long-term alignment with restaurant growth.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+:root{
+  --black:#111111;
+  --red:#e10600;
+  --white:#ffffff;
+}
+
+/* SECTION */
+.why-influ-dark{
+  background:var(--black);
+  color:var(--white);
+  padding:160px 8%;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Red geometric accents */
+.shape-top{
+  position:absolute;
+  top:-120px;
+  right:-120px;
+  width:350px;
+  height:350px;
+  background:var(--red);
+  transform:rotate(45deg);
+  opacity:0.08;
+}
+
+.shape-bottom{
+  position:absolute;
+  bottom:-150px;
+  left:-150px;
+  width:300px;
+  height:300px;
+  background:var(--red);
+  transform:rotate(45deg);
+  opacity:0.06;
+}
+
+.why-container{
+  max-width:1100px;
+  margin:auto;
+  position:relative;
+  z-index:2;
+}
+
+/* TAG */
+.why-tag{
+  font-size:12px;
+  letter-spacing:0.4em;
+  font-weight:700;
+  color:var(--red);
+}
+
+/* TITLE */
+.why-title{
+  font-size:52px;
+  font-weight:900;
+  line-height:1.1;
+  margin:25px 0;
+}
+
+.why-title span{
+  color:var(--red);
+}
+
+/* Divider */
+.why-divider{
+  width:120px;
+  height:4px;
+  background:var(--red);
+  margin:30px 0 50px;
+}
+
+/* Intro */
+.why-intro{
+  font-size:18px;
+  line-height:1.8;
+  color:#cccccc;
+  margin-bottom:70px;
+  max-width:850px;
+}
+
+/* GRID */
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:60px;
+}
+
+/* POINT */
+.why-point h3{
+  font-size:20px;
+  margin-bottom:15px;
+  position:relative;
+}
+
+.why-point h3::after{
+  content:"";
+  display:block;
+  width:40px;
+  height:3px;
+  background:var(--red);
+  margin-top:8px;
+}
+
+.why-point p{
+  font-size:16px;
+  line-height:1.7;
+  color:#dddddd;
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .why-title{font-size:36px;}
+  .why-influ-dark{padding:120px 20px;}
+}
+</style>
+
+<!-- FEATURES -->
+<section class="features">
+  <h2>Core Platform Features</h2>
+  <div class="divider"></div>
+
+  <div class="feature-grid">
+
+    <div class="feature-item">
+      <h3>Verified Creator Onboarding</h3>
+      <p>Identity checks, authenticity screening, and locality validation.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3>Seated Cover Settlement</h3>
+      <p>Payments triggered only by verified attendance.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3>Capacity-Aware CPA</h3>
+      <p>Higher payouts for off-peak slots, lower for peak demand.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3>Dual-Key Proof</h3>
+      <p>Venue confirmation + customer token merged into secure receipt.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3>Compliance Linting</h3>
+      <p>Pre-publish checks prevent disclosure and claim violations.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3>Automated Settlement</h3>
+      <p>Dispute windows, clawbacks, escrow-ready payout logic.</p>
+    </div>
+
+  </div>
+</section>
+<!-- ================= BUSINESS MODEL SECTION ================= -->
+<section class="business-model-white">
+
+  <div class="bm-container">
+
+    <span class="bm-label">REVENUE FRAMEWORK</span>
+
+    <h2 class="bm-title">
+      A <span class="red">Performance-Driven</span> Revenue Structure
+      <br>
+      Built Around <span class="dark">Verified Outcomes</span>
+    </h2>
+
+    <div class="bm-divider">
+      <span></span>
+    </div>
+
+    <p class="bm-intro">
+      Influ-Pay operates on a results-first model. Restaurants only pay when
+      measurable dining outcomes occur. The system integrates creator
+      activation, attendance validation, and automated settlement into
+      one structured financial loop designed to eliminate waste,
+      prevent disputes, and maximise measurable ROI.
+    </p>
+
+    <!-- FLOW STRUCTURE -->
+    <div class="bm-flow">
+
+      <div class="bm-step">
+        <div class="bm-circle">01</div>
+        <h4>Campaign Activation</h4>
+        <p>
+          Restaurants define payout logic, capacity rules,
+          and structured CPA thresholds aligned directly
+          with revenue goals and seat yield management.
+        </p>
+      </div>
+
+      <div class="bm-line"></div>
+
+      <div class="bm-step">
+        <div class="bm-circle">02</div>
+        <h4>Outcome Verification</h4>
+        <p>
+          Dual-key attendance validation and receipt tokenisation
+          ensure only physically seated, verified guests
+          trigger performance settlement logic.
+        </p>
+      </div>
+
+      <div class="bm-line"></div>
+
+      <div class="bm-step">
+        <div class="bm-circle">03</div>
+        <h4>Automated Settlement</h4>
+        <p>
+          Creator payouts execute automatically once validation
+          is confirmed. Influ-Pay retains a structured
+          infrastructure margin as platform revenue.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- EXTRA REVENUE STREAMS -->
+    <div class="bm-extra">
+
+      <div class="bm-highlight">
+        <h5>Performance Commission</h5>
+        <p>Success-based payout margin per validated booking.</p>
+      </div>
+
+      <div class="bm-highlight">
+        <h5>Subscription Access</h5>
+        <p>Premium analytics, campaign optimisation & fraud controls.</p>
+      </div>
+
+      <div class="bm-highlight">
+        <h5>Enterprise Licensing</h5>
+        <p>Infrastructure licensing for multi-location groups.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+:root{
+  --red:#e10600;
+  --black:#000000;
+  --white:#ffffff;
+  --gray:#666666;
+}
+
+/* SECTION */
+.business-model-white{
+  background:#ffffff;
+  padding:130px 8%;
+  color:#000000;
+  text-align:center;
+}
+
+/* LABEL */
+.bm-label{
+  font-size:12px;
+  letter-spacing:0.4em;
+  font-weight:800;
+  color:#e10600;
+  position:relative;
+  display:inline-block;
+}
+
+.bm-label::after{
+  content:"";
+  width:30px;
+  height:2px;
+  background:#e10600;
+  position:absolute;
+  right:-40px;
+  top:50%;
+}
+
+/* TITLE */
+.bm-title{
+  font-size:46px;
+  font-weight:900;
+  margin:25px 0 20px;
+  line-height:1.2;
+}
+
+.bm-title .red{
+  color:#e10600;
+}
+
+.bm-title .dark{
+  color:#000000;
+  border-bottom:3px solid #e10600;
+  padding-bottom:4px;
+}
+
+/* DIVIDER */
+.bm-divider{
+  width:160px;
+  height:3px;
+  background:#eee;
+  margin:0 auto 50px;
+  position:relative;
+  overflow:hidden;
+}
+
+.bm-divider span{
+  position:absolute;
+  left:0;
+  width:70px;
+  height:100%;
+  background:#e10600;
+}
+
+/* INTRO */
+.bm-intro{
+  max-width:760px;
+  margin:0 auto 80px;
+  font-size:17px;
+  color:#444;
+  line-height:1.75;
+}
+
+/* FLOW */
+.bm-flow{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:50px;
+  flex-wrap:wrap;
+  margin-bottom:80px;
+}
+
+/* STEP */
+.bm-step{
+  max-width:260px;
+  text-align:left;
+  transition:0.3s ease;
+}
+
+.bm-step:hover{
+  transform:translateY(-6px);
+}
+
+/* CIRCLE */
+.bm-circle{
+  width:48px;
+  height:48px;
+  border:2px solid #e10600;
+  color:#e10600;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  font-weight:900;
+  margin-bottom:18px;
+  font-size:14px;
+}
+
+/* HEADING */
+.bm-step h4{
+  font-size:17px;
+  font-weight:900;
+  margin-bottom:10px;
+  position:relative;
+}
+
+.bm-step h4::after{
+  content:"";
+  width:40px;
+  height:2px;
+  background:#e10600;
+  display:block;
+  margin-top:6px;
+}
+
+/* TEXT */
+.bm-step p{
+  font-size:14px;
+  color:#555;
+  line-height:1.7;
+}
+
+/* CONNECTING LINE */
+.bm-line{
+  width:60px;
+  height:2px;
+  background:#e10600;
+  position:relative;
+}
+
+.bm-line::after{
+  content:"";
+  position:absolute;
+  right:-6px;
+  top:-4px;
+  border-left:8px solid #e10600;
+  border-top:5px solid transparent;
+  border-bottom:5px solid transparent;
+}
+
+/* EXTRA */
+.bm-extra{
+  display:flex;
+  justify-content:center;
+  gap:60px;
+  flex-wrap:wrap;
+}
+
+.bm-highlight{
+  max-width:260px;
+  text-align:left;
+  position:relative;
+}
+
+.bm-highlight::before{
+  content:"";
+  width:3px;
+  height:100%;
+  background:#e10600;
+  position:absolute;
+  left:-12px;
+  top:0;
+}
+
+.bm-highlight h5{
+  font-size:15px;
+  color:#e10600;
+  margin-bottom:8px;
+  font-weight:900;
+}
+
+.bm-highlight p{
+  font-size:13px;
+  color:#444;
+  line-height:1.6;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .bm-flow{
+    flex-direction:column;
+  }
+  .bm-line{
+    width:2px;
+    height:50px;
+  }
+  .bm-line::after{
+    display:none;
+  }
+  .bm-title{
+    font-size:30px;
+  }
+}
+</style>
+<!-- ================= HOW IT WORKS ENHANCED ================= -->
+<section class="how-black">
+
+<div class="how-heading-wrap">
+
+  <span class="how-mini">PERFORMANCE ENGINE</span>
+
+  <h2 class="how-title">
+    How <span>Influ-Pay</span> Works
+  </h2>
+
+  <p class="how-sub">
+    A structured performance-driven revenue model that connects
+    restaurants, creators, and customers through verified outcomes
+    not impressions.
+  </p>
+
+  <div class="how-divider">
+    <span></span>
+  </div>
+
+</div>
+  
+
+  <div class="how-flow">
+
+  <div class="step">
+    <div class="circle">1</div>
+    <div class="icon">📄</div>
+    <h4>Campaign Defined</h4>
+    <p>
+      Restaurant configures payout per seated cover, peak/off-peak rules,
+      budget caps, and compliance parameters to ensure structured performance control.
+    </p>
+  </div>
+
+  <div class="step">
+    <div class="circle">2</div>
+    <div class="icon">📢</div>
+    <h4>Creator Activation</h4>
+    <p>
+      Verified local creators publish tracked content aligned with
+      venue objectives and targeted audience demographics.
+    </p>
+  </div>
+
+  <div class="step">
+    <div class="circle">3</div>
+    <div class="icon">📲</div>
+    <h4>Customer Conversion</h4>
+    <p>
+      Customers book or walk-in through secure QR links,
+      ensuring accurate campaign attribution.
+    </p>
+  </div>
+
+  <div class="step">
+    <div class="circle">4</div>
+    <div class="icon">🏪</div>
+    <h4>Dual-Key Validation</h4>
+    <p>
+      Venue confirmation and digital token merge to validate
+      genuine seated attendance.
+    </p>
+  </div>
+
+  <div class="step">
+    <div class="circle">5</div>
+    <div class="icon">🧾</div>
+    <h4>Receipt Tokenisation</h4>
+    <p>
+      Tamper-evident receipts are generated to prevent fraud
+      and secure performance proof.
+    </p>
+  </div>
+
+  <div class="step">
+    <div class="circle">6</div>
+    <div class="icon">💳</div>
+    <h4>Automated Settlement</h4>
+    <p>
+      Payments are released only for verified outcomes,
+      ensuring predictable ROI for restaurant partners.
+    </p>
+  </div>
+
+</div>
+
+</section>
+
+<style>
+  /* ===== HEADING WRAP ===== */
+.how-heading-wrap{
+  text-align:center;
+  max-width:900px;
+  margin:0 auto 60px;
+}
+
+/* MINI LABEL */
+.how-mini{
+  font-size:12px;
+  letter-spacing:0.4em;
+  color:#e10600;
+  font-weight:700;
+}
+
+/* TITLE */
+.how-title{
+  font-size:44px;
+  font-weight:900;
+  color:#ffffff;
+  margin:18px 0 18px;
+}
+
+.how-title span{
+  color:#e10600;
+}
+
+/* SUB HEADLINE */
+.how-sub{
+  font-size:17px;
+  line-height:1.7;
+  color:#cccccc;
+  margin-bottom:30px;
+}
+
+/* PREMIUM DIVIDER */
+.how-divider{
+  width:120px;
+  height:4px;
+  background:#2c2c2c;
+  margin:0 auto;
+  position:relative;
+  border-radius:10px;
+}
+
+.how-divider span{
+  position:absolute;
+  left:0;
+  top:0;
+  height:100%;
+  width:40px;
+  background:#e10600;
+  border-radius:10px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .how-title{font-size:30px;}
+  .how-sub{font-size:15px;}
+}
+  .how-flow{
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:40px;
+  position:relative;
+}
+
+.step{
+  width:200px;
+  text-align:center;
+  position:relative;
+}
+
+/* ARROW BETWEEN STEPS */
+.step:not(:last-child)::after{
+  content:"➜";
+  position:absolute;
+  right:-28px;
+  top:35px;
+  font-size:26px;
+  color:#e10600;
+  font-weight:900;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .how-flow{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .step:not(:last-child)::after{
+    content:"➜";
+    right:50%;
+    transform:translateX(50%) rotate(90deg);
+    top:auto;
+    bottom:-28px;
+  }
+}
+ .how-black{
+  background:#111111;
+  color:#ffffff;
+  padding:110px 6%;
+  text-align:center;
+}
+
+.how-title{
+  font-size:40px;
+  font-weight:900;
+}
+
+.how-divider{
+  width:90px;
+  height:3px;
+  background:#e10600;
+  margin:20px auto 60px;
+}
+
+.flow-container{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.flow-step{
+  width:180px;
+  text-align:center;
+}
+
+.circle{
+  width:42px;
+  height:42px;
+  background:#e10600;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  margin:0 auto 15px;
+}
+
+.flow-step h4{
+  font-size:15px;
+  margin-bottom:8px;
+  color:#e10600;
+}
+
+.flow-step p{
+  font-size:12px;
+  color:#cccccc;
+  line-height:1.5;
+}
+
+.arrow{
+  font-size:28px;
+  color:#e10600;
+  font-weight:900;
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .flow-container{
+    flex-direction:column;
+  }
+  .arrow{
+    transform:rotate(90deg);
+  }
+} 
+/* Decorative Left Person */
+.how-left-illustration{
+  position:absolute;
+  left:2%;
+  bottom:20px;
+  font-size:60px;
+  opacity:0.15;
+}
+
+/* Decorative Right Airplane */
+.how-right-illustration{
+  position:absolute;
+  right:2%;
+  top:40px;
+  font-size:60px;
+  opacity:0.15;
+}
+
+/* Adjust spacing */
+.how-black{
+  padding:110px 6%;
+  overflow:hidden;
+}
+:root{
+  --black:#111111;
+  --red:#e10600;
+  --white:#ffffff;
+}
+
+/* SECTION */
+.how-black{
+  background:var(--black);
+  color:var(--white);
+  padding:90px 6%;
+  text-align:center;
+}
+
+.how-title{
+  font-size:38px;
+  font-weight:900;
+}
+
+.how-divider{
+  width:90px;
+  height:3px;
+  background:var(--red);
+  margin:20px auto 60px;
+}
+
+/* FLOW */
+.how-flow{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:25px;
+}
+
+/* STEP */
+.step{
+  width:170px;
+  position:relative;
+}
+
+.circle{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:var(--red);
+  color:var(--white);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  margin:0 auto 15px;
+}
+
+.icon{
+  font-size:28px;
+  margin-bottom:12px;
+}
+
+.step h4{
+  font-size:15px;
+  margin-bottom:8px;
+  color:var(--red);
+}
+
+.step p{
+  font-size:12px;
+  line-height:1.5;
+  color:#cccccc;
+}
+
+/* CONNECTOR */
+.connector{
+  width:40px;
+  height:2px;
+  background:var(--red);
+}
+/* Thread SVG */
+.thread-line{
+  position:absolute;
+  top:120px;
+  left:0;
+  width:100%;
+  height:180px;
+  pointer-events:none;
+  opacity:0.6;
+}
+
+/* Decorative Left Person */
+.how-left-illustration{
+  position:absolute;
+  left:2%;
+  bottom:20px;
+  font-size:60px;
+  opacity:0.15;
+}
+
+/* Decorative Right Airplane */
+.how-right-illustration{
+  position:absolute;
+  right:2%;
+  top:40px;
+  font-size:60px;
+  opacity:0.15;
+}
+
+/* Adjust spacing */
+.how-black{
+  padding:110px 6%;
+  overflow:hidden;
+}
+/* MOBILE */
+@media(max-width:900px){
+  .how-flow{
+    flex-direction:column;
+  }
+  .connector{
+    width:2px;
+    height:30px;
+  }
+}
+</style>
+
+<!-- ================= FEATURES SECTION ================= -->
+<section class="features-clean">
+
+  <div class="features-container">
+
+    <!-- LEFT SIDE -->
+    <div class="features-left">
+      <span class="features-mini">CORE PLATFORM FEATURES</span>
+
+      <h2 class="features-title">
+        Performance Infrastructure Built for <span>Restaurants</span>
+      </h2>
+
+      <p class="features-sub">
+        Influ-Pay transforms creator marketing into measurable
+        acquisition infrastructure by combining verification,
+        automation, and settlement intelligence in one system.
+      </p>
+
+      <div class="features-divider"></div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="features-right">
+
+      <div class="feature-row">
+        <h4>Verified Seated Cover Settlement</h4>
+        <p>
+          Restaurants pay only for validated in-venue attendance,
+          eliminating vanity metrics and impression-based waste.
+        </p>
+      </div>
+
+      <div class="feature-row">
+        <h4>Dual-Key Attendance Validation</h4>
+        <p>
+          Venue confirmation merges with secure digital tokenisation
+          to prevent fraudulent or manipulated redemptions.
+        </p>
+      </div>
+
+      <div class="feature-row">
+        <h4>Capacity-Aware Performance Pricing</h4>
+        <p>
+          Payout logic adapts to peak and off-peak time slots,
+          optimising revenue distribution and table utilisation.
+        </p>
+      </div>
+
+      <div class="feature-row">
+        <h4>Automated Settlement Engine</h4>
+        <p>
+          Performance flows from Pending → Verified → Settled
+          without manual reconciliation or disputes.
+        </p>
+      </div>
+
+      <div class="feature-row">
+        <h4>Compliance & Disclosure Guardrails</h4>
+        <p>
+          Built-in pre-publish review prevents regulatory issues
+          and ensures transparent creator disclosures.
+        </p>
+      </div>
+
+      <div class="feature-row">
+        <h4>Fraud-Resistant Receipt Tokenisation</h4>
+        <p>
+          Every validated cover generates tamper-evident proof
+          protecting both restaurants and creators.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+/* ================= FEATURES SECTION ================= */
+
+.features-clean{
+  background:#ffffff;
+  padding:120px 8%;
+}
+
+.features-container{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:80px;
+}
+
+/* LEFT SIDE */
+.features-mini{
+  font-size:12px;
+  letter-spacing:0.4em;
+  color:#e10600;
+  font-weight:700;
+}
+
+.features-title{
+  font-size:42px;
+  font-weight:900;
+  margin:15px 0 20px;
+  color:#111;
+}
+
+.features-title span{
+  color:#e10600;
+}
+
+.features-sub{
+  font-size:16px;
+  color:#555;
+  line-height:1.7;
+  margin-bottom:25px;
+}
+
+.features-divider{
+  width:100px;
+  height:4px;
+  background:#e10600;
+}
+
+/* RIGHT SIDE */
+.feature-row{
+  border-left:4px solid #e10600;
+  padding-left:20px;
+  margin-bottom:30px;
+}
+
+.feature-row h4{
+  font-size:17px;
+  font-weight:800;
+  margin-bottom:8px;
+  color:#111;
+}
+
+.feature-row p{
+  font-size:15px;
+  color:#555;
+  line-height:1.6;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .features-container{
+    grid-template-columns:1fr;
+    gap:50px;
+  }
+  .features-title{
+    font-size:30px;
+  }
+}
+</style>
+
+<!-- ================= FOUNDER SECTION ULTRA ================= -->
+<section class="founder-section">
+
+  <div class="founder-heading-wrap">
+
+  <span class="founder-mini">LEADERSHIP & STRATEGY</span>
+
+  <h2 class="founder-title">
+    Building <span class="highlight">Performance Infrastructure</span><br>
+    for the <span class="accent">Future of Hospitality Marketing</span>
+  </h2>
+
+  <div class="founder-divider">
+    <span></span>
+  </div>
+
+    <p class="founder-sub">
+      Influ-Pay is architected as performance infrastructure —
+      led by a founder committed to measurable economics,
+      verification integrity, and hospitality-first innovation.
+    </p>
+
+    <div class="founder-layout">
+
+      <!-- LEFT PROFILE SIDE -->
+      <div class="founder-profile">
+
+        <div class="founder-image">RP</div>
+
+        <h3>Rushabh Patel</h3>
+        <span class="founder-role">
+          Founder • Product Architect • Performance Systems Strategist
+        </span>
+
+        <p class="founder-mini-bio">
+          Focused on building structured revenue engines that
+          align incentives between creators and hospitality operators.
+        </p>
+
+        <div class="founder-quote">
+          “Marketing should operate as revenue infrastructure
+          not speculative advertising.”
+        </div>
+
+      </div>
+
+      <!-- RIGHT CONTENT SIDE -->
+      <div class="founder-content">
+
+        <h4 class="founder-section-title">Why Influ-Pay Exists</h4>
+
+        <p>
+          Rushabh founded Influ-Pay to eliminate inefficiencies in traditional
+          influencer marketing where restaurants absorb high spend with
+          unpredictable return. The platform was designed to replace
+          impression-based payments with verified seated cover settlement
+          ensuring marketing directly funds real-world business outcomes.
+        </p>
+
+        <h4 class="founder-section-title">Product Architecture Philosophy</h4>
+
+        <p>
+          Influ-Pay introduces a dual-key validation framework, receipt
+          tokenisation logic, and structured CPA economics that align
+          payout release strictly with verified attendance. This approach
+          transforms creator marketing from exposure-driven activity
+          into measurable acquisition infrastructure.
+        </p>
+
+        <h4 class="founder-section-title">Strategic Company Positioning</h4>
+
+        <p>
+          Rather than functioning as a simple creator marketplace,
+          Influ-Pay operates as performance settlement infrastructure
+          designed to reduce disputes, prevent fraud, protect venues,
+          and create transparent, automated financial workflows.
+        </p>
+
+        <h4 class="founder-section-title">Leadership Principles</h4>
+
+        <div class="founder-strengths">
+          <span>Performance-First Economics</span>
+          <span>Verification Integrity</span>
+          <span>Fraud-Resistant Systems</span>
+          <span>Operational Simplicity</span>
+          <span>Compliance-by-Design</span>
+          <span>Predictable ROI Models</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+  
+/* ================= BASE ================= */
+.founder-section{
+  background:#000000;
+  color:#ffffff;
+  padding:160px 8%;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Large Background Word */
+.founder-bg-text{
+  position:absolute;
+  top:50%;
+  right:-100px;
+  font-size:240px;
+  font-weight:900;
+  color:rgba(255,0,0,0.04);
+  transform:rotate(-90deg) translateY(-50%);
+  pointer-events:none;
+}
+
+/* Left Red Accent Line */
+.founder-section::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  height:100%;
+  width:6px;
+  background:#ff0000;
+}
+
+/* Container */
+.founder-container{
+  max-width:1200px;
+  margin:auto;
+  position:relative;
+  z-index:2;
+}
+
+/* Title */
+.founder-title{
+  font-size:46px;
+  font-weight:900;
+  text-align:center;
+  margin-bottom:15px;
+}
+
+/* Divider */
+.founder-divider{
+  width:110px;
+  height:4px;
+  background:#ff0000;
+  margin:0 auto 30px;
+}
+
+/* Subtitle */
+.founder-sub{
+  text-align:center;
+  max-width:800px;
+  margin:0 auto 90px;
+  font-size:16px;
+  color:#bbbbbb;
+  line-height:1.6;
+}
+
+/* Layout */
+.founder-layout{
+  display:grid;
+  grid-template-columns:350px 1fr;
+  gap:80px;
+  align-items:start;
+}
+
+/* Profile */
+.founder-profile{
+  text-align:center;
+}
+
+.founder-image{
+  width:160px;
+  height:160px;
+  background:#ff0000;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:55px;
+  font-weight:900;
+  margin:0 auto 25px;
+  box-shadow:0 0 45px rgba(255,0,0,0.4);
+}
+
+.founder-profile h3{
+  font-size:24px;
+  margin-bottom:8px;
+}
+
+.founder-role{
+  display:block;
+  font-size:13px;
+  color:#ff0000;
+  font-weight:600;
+  margin-bottom:20px;
+}
+
+.founder-mini-bio{
+  font-size:14px;
+  color:#cccccc;
+  margin-bottom:25px;
+  line-height:1.6;
+}
+
+/* Quote */
+.founder-quote{
+  font-size:14px;
+  font-style:italic;
+  border-left:3px solid #ff0000;
+  padding-left:15px;
+  color:#dddddd;
+}
+
+/* Right Content */
+.founder-section-title{
+  font-size:16px;
+  font-weight:700;
+  color:#ff0000;
+  margin:25px 0 10px;
+}
+
+.founder-content p{
+  font-size:15px;
+  line-height:1.8;
+  margin-bottom:18px;
+  color:#dddddd;
+}
+
+/* Strength Tags */
+.founder-strengths{
+  margin-top:25px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.founder-strengths span{
+  border:1px solid #ff0000;
+  padding:8px 18px;
+  font-size:13px;
+  font-weight:600;
+  transition:0.3s ease;
+}
+
+.founder-strengths span:hover{
+  background:#ff0000;
+  color:#000000;
+}
+/* HEADING WRAP */
+.founder-heading-wrap{
+  text-align:center;
+  margin-bottom:80px;
+}
+
+/* MINI LABEL */
+.founder-mini{
+  font-size:12px;
+  letter-spacing:0.4em;
+  color:#ff0000;
+  font-weight:700;
+}
+
+/* TITLE */
+.founder-title{
+  font-size:48px;
+  font-weight:900;
+  line-height:1.2;
+  margin:20px 0 25px;
+  color:#ffffff;
+}
+
+/* WHITE → RED STYLE */
+.founder-title .highlight{
+  color:#ffffff;
+}
+
+.founder-title .accent{
+  color:#ff0000;
+}
+
+/* PREMIUM DIVIDER */
+.founder-divider{
+  width:140px;
+  height:4px;
+  background:#f8f8f8;
+  margin:0 auto;
+  position:relative;
+  border-radius:10px;
+}
+
+.founder-divider span{
+  position:absolute;
+  left:0;
+  top:0;
+  height:100%;
+  width:50px;
+  background:#ff0000;
+  border-radius:10px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .founder-title{
+    font-size:30px;
+  }
+}
+/* Responsive */
+@media(max-width:900px){
+  .founder-layout{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .founder-bg-text{
+    display:none;
+  }
+}
+
+</style>
+<!-- ================= FAQ SECTION ================= -->
+<section class="faq-clean">
+
+  <div class="faq-container">
+
+    <span class="faq-mini">FREQUENTLY ASKED QUESTIONS</span>
+
+    <h2 class="faq-title">
+      Everything You Need to Know About <span>Influ-Pay</span>
+    </h2>
+
+    <p class="faq-sub">
+      Clear answers on how Influ-Pay delivers measurable performance,
+      secure validation, and ROI-driven collaboration between restaurants
+      and creators.
+    </p>
+
+    <div class="faq-divider"></div>
+
+    <!-- FAQ LIST -->
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          What makes Influ-Pay different from traditional influencer marketing?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Influ-Pay operates on verified outcomes, not impressions. Restaurants
+          only pay for confirmed seated customers validated through secure
+          digital tracking and receipt tokenisation.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          How is customer attendance verified?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Attendance is confirmed through a dual-key validation system that
+          merges venue confirmation with a secure digital token, ensuring
+          accurate attribution and eliminating fraud.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          Do creators receive guaranteed payments?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Creators are compensated based on verified performance outcomes.
+          This aligns incentives with real customer conversions and ensures
+          fair, transparent settlement.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          How does Influ-Pay protect restaurants from fake conversions?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Receipt tokenisation and digital proof layers prevent manipulation.
+          Payments are released only after validation thresholds are met.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          Can campaigns be customised?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Yes. Restaurants can define payout per seated cover, budget caps,
+          timing controls, and capacity rules tailored to operational needs.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          What type of creators can join Influ-Pay?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Verified local creators with authentic audience engagement and
+          location-based relevance are eligible to activate campaigns.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          Is Influ-Pay scalable across multiple venues?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          The platform is designed for multi-location deployment, enabling
+          centralised performance tracking and consistent ROI measurement.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          How quickly are settlements processed?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Settlements are automated and released once performance validation
+          is complete, ensuring predictable and secure financial flow.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+/* ================= FAQ SECTION ================= */
+.faq-question span{
+  color:#e10600;
+  font-size:22px;
+  font-weight:900;
+  background:rgba(225,6,0,0.08);
+  width:28px;
+  height:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  transition:0.3s ease;
+}
+
+.faq-item.active .faq-question span{
+  transform:rotate(45deg);
+  background:#e10600;
+  color:#ffffff;
+}
+/* PLUS SYMBOL STYLE */
+.faq-question span{
+  color:#e10600;   /* RED COLOR */
+  font-size:20px;
+  font-weight:900;
+  transition:0.3s ease;
+}
+
+/* Rotate when active */
+.faq-item.active .faq-question span{
+  transform:rotate(45deg);
+  color:#e10600;
+}
+.faq-clean{
+  background:#ffffff;
+  padding:120px 8%;
+}
+
+.faq-container{
+  max-width:900px;
+  margin:auto;
+}
+
+/* MINI LABEL */
+.faq-mini{
+  font-size:12px;
+  letter-spacing:0.4em;
+  color:#e10600;
+  font-weight:700;
+}
+
+/* TITLE */
+.faq-title{
+  font-size:40px;
+  font-weight:900;
+  margin:15px 0 15px;
+  color:#111;
+}
+
+.faq-title span{
+  color:#e10600;
+}
+
+/* SUB */
+.faq-sub{
+  font-size:16px;
+  color:#555;
+  line-height:1.7;
+  margin-bottom:25px;
+}
+
+/* DIVIDER */
+.faq-divider{
+  width:100px;
+  height:4px;
+  background:#e10600;
+  margin-bottom:40px;
+}
+
+/* FAQ ITEMS */
+.faq-item{
+  border-bottom:1px solid #ddd;
+  padding:18px 0;
+}
+
+/* QUESTION */
+.faq-question{
+  font-weight:700;
+  font-size:16px;
+  display:flex;
+  justify-content:space-between;
+  cursor:pointer;
+  color:#111;
+}
+
+/* ANSWER */
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  font-size:15px;
+  color:#555;
+  line-height:1.6;
+  transition:0.3s ease;
+  margin-top:8px;
+}
+
+/* ACTIVE */
+.faq-item.active .faq-answer{
+  max-height:200px;
+}
+
+.faq-item.active span{
+  transform:rotate(45deg);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .faq-clean{padding:80px 20px;}
+  .faq-title{font-size:28px;}
+}
+</style>
+
+<script>
+function toggleFAQ(element){
+  const item = element.parentElement;
+  document.querySelectorAll(".faq-item").forEach(i=>{
+    if(i !== item) i.classList.remove("active");
+  });
+  item.classList.toggle("active");
+}
+</script>
+<!-- ================= PREMIUM FRAMED CONTACT ================= -->
+<section class="contact-premium" id="contact">
+
+  <div class="premium-wrapper">
+
+    <div class="premium-content">
+
+      <div class="premium-left">
+
+        <span class="premium-label">INFLU-PAY PERFORMANCE INFRASTRUCTURE</span>
+
+        <h2>
+          Transform Creator Reach<br>
+          Into <span>Verified Revenue</span>
+        </h2>
+
+        <div class="premium-divider"></div>
+
+        <p>
+          Influ-Pay is built for restaurants that demand measurable acquisition,
+          not speculative exposure. Every campaign is structured around
+          verified seated covers, transparent settlement logic,
+          and performance-driven accountability.
+        </p>
+
+        <p>
+          Our model aligns creators, venues, and customers
+          through offline attribution and validated conversions
+          ensuring every marketing decision connects directly to revenue.
+        </p>
+
+      </div>
+
+      <div class="premium-right">
+
+        <div class="premium-points">
+          <div>
+            <span>Offline Attribution Engine</span>
+          </div>
+          <div>
+            <span>Dual-Key Verification Model</span>
+          </div>
+          <div>
+            <span>Capacity-Aware Settlement Logic</span>
+          </div>
+          <div>
+            <span>Scalable Multi-Location Deployment</span>
+          </div>
+        </div>
+
+        <button class="auto-toggle-btn" onclick="openMail()">
+  Request Strategic Briefing
+</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+:root{
+  --black:#111111;
+  --red:#e10600;
+  --white:#ffffff;
+}
+/* AUTO TOGGLE BUTTON */
+.auto-btn{
+  background:var(--red);
+  color:var(--white);
+  border:2px solid var(--white);
+  padding:14px 45px;
+  font-weight:900;
+  font-size:14px;
+  cursor:pointer;
+  transition:0.4s ease;
+}
+
+/* OFF STATE */
+.auto-btn.off{
+  background:var(--white);
+  color:var(--red);
+  border:2px solid var(--red);
+}
+/* SECTION */
+.contact-premium{
+  background:var(--red);
+  padding:90px 8%;  /* compact */
+  display:flex;
+  justify-content:center;
+}
+
+/* OUTER WHITE BORDER FRAME */
+.premium-wrapper{
+  border:4px solid var(--white);  /* 🔥 white border added */
+  max-width:1100px;
+  width:100%;
+}
+
+/* INNER BLACK PANEL */
+.premium-content{
+  background:var(--black);
+  color:var(--white);
+  padding:50px 60px;
+  display:flex;
+  justify-content:space-between;
+  gap:60px;
+}
+
+/* LEFT */
+.premium-left{
+  flex:1;
+}
+
+.premium-label{
+  font-size:11px;
+  letter-spacing:0.35em;
+  font-weight:700;
+}
+
+.premium-left h2{
+  font-size:34px;
+  font-weight:900;
+  margin:15px 0 10px;
+  line-height:1.2;
+}
+
+.premium-left span{
+  color:var(--red);
+}
+
+.premium-divider{
+  width:80px;
+  height:3px;
+  background:var(--red);
+  margin:18px 0 20px;
+}
+
+.premium-left p{
+  font-size:14px;
+  line-height:1.7;
+  margin-bottom:18px;
+}
+
+/* RIGHT */
+.premium-right{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  justify-content:center;
+  gap:25px;
+}
+
+/* POINTS */
+.premium-points{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  font-size:13px;
+  font-weight:700;
+}
+
+.premium-points div{
+  border-left:3px solid var(--red);
+  padding-left:12px;
+}
+
+/* BUTTON */
+.premium-right button{
+  background:var(--red);
+  color:var(--white);
+  border:2px solid var(--white);
+  padding:12px 40px;
+  font-weight:900;
+  font-size:14px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.premium-right button:hover{
+  background:var(--white);
+  color:var(--black);
+}
+.auto-toggle-btn{
+  background:#e10600;          /* Red ON */
+  color:#ffffff;
+  border:2px solid #ffffff;
+  padding:14px 45px;
+  font-weight:900;
+  font-size:14px;
+  cursor:pointer;
+  transition:all 0.2s ease;    /* smooth change */
+}
+
+/* OFF State */
+.auto-toggle-btn.off{
+  background:#ffffff;          /* White OFF */
+  color:#e10600;
+  border:2px solid #e10600;
+}
+/* MOBILE */
+@media(max-width:900px){
+  .premium-content{
+    flex-direction:column;
+    padding:40px 25px;
+  }
+  .premium-right{
+    align-items:flex-start;
+  }
+}
+</style>
+
+<script>
+function openMail(){
+  window.location.href =
+  "mailto:info@influ-pay.com" +
+  "?subject=Influ-Pay Strategic Briefing Request" +
+  "&body=Hello Influ-Pay Team,%0D%0A%0D%0AI would like to discuss launching a performance-driven campaign.%0D%0A%0D%0ARestaurant:%0D%0ALocation:%0D%0AObjective:%0D%0A%0D%0ARegards,";
+}
+
+const autoBtn = document.querySelector(".auto-btn");
+const button = document.querySelector(".auto-toggle-btn");
+
+setInterval(() => {
+  button.classList.toggle("off");
+}, 2500); // changes every 2.5 seconds
+</script>
+
+<footer class="lux-footer">
+  
+  <div class="footer-content">
+    
+    <div class="footer-left">
+      <h3>Influ<span>Pay</span></h3>
+    </div>
+
+    <div class="footer-center">
+      Performance Creator Marketplace for Restaurants
+    </div>
+
+    <div class="footer-right">
+      © 2026 All Rights Reserved
+    </div>
+
+  </div>
+
+</footer>
+
+<style>
+:root{
+  --black:#111111;
+  --red:#e10600;
+  --white:#ffffff;
+}
+
+.lux-footer{
+  background:var(--black);
+  padding:20px 6%;
+  border-top:3px solid var(--red);
+  color:var(--white);
+}
+
+.footer-content{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+/* BRAND */
+.footer-left h3{
+  font-size:16px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.footer-left span{
+  color:var(--red);
+}
+
+/* CENTER TEXT */
+.footer-center{
+  font-size:12px;
+  opacity:0.8;
+}
+
+/* RIGHT */
+.footer-right{
+  font-size:12px;
+  opacity:0.7;
+}
+
+/* Subtle Hover Effect */
+.footer-left:hover span{
+  text-shadow:0 0 8px var(--red);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .footer-content{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+</style>
+
+</body>
+</html>
