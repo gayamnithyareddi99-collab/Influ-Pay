@@ -2152,15 +2152,99 @@ document.addEventListener("DOMContentLoaded", function() {
   padding:110px 6%;
   overflow:hidden;
 }
-/* MOBILE */
+/* ================= MOBILE OPTIMISED HOW SECTION ================= */
 @media(max-width:900px){
+
+  /* Section padding */
+  .how-black{
+    padding:80px 20px;
+  }
+
+  /* Title resize */
+  .how-title{
+    font-size:26px;
+    text-align:center;
+    margin-bottom:15px;
+  }
+
+  .how-divider{
+    width:70px;
+    height:3px;
+    margin:15px auto 40px;
+  }
+
+  /* FLOW STACK */
   .how-flow{
     flex-direction:column;
+    align-items:center;
+    gap:35px;
   }
+
+  /* STEP CARD */
+  .step{
+    width:100%;
+    max-width:420px;
+    text-align:center;
+    padding:0 10px;
+  }
+
+  /* Circle smaller */
+  .circle{
+    width:42px;
+    height:42px;
+    font-size:14px;
+    margin:0 auto 12px;
+  }
+
+  /* Icon spacing */
+  .icon{
+    font-size:22px;
+    margin-bottom:10px;
+  }
+
+  /* Heading */
+  .step h4{
+    font-size:16px;
+    margin-bottom:8px;
+  }
+
+  /* Paragraph */
+  .step p{
+    font-size:14px;
+    line-height:1.6;
+  }
+
+  /* CONNECTOR LINE (Vertical) */
   .connector{
     width:2px;
-    height:30px;
+    height:35px;
+    background:var(--red);
+    margin:0 auto;
   }
+
+}
+
+/* SMALL PHONES */
+@media(max-width:480px){
+
+  .how-black{
+    padding:70px 16px;
+  }
+
+  .how-title{
+    font-size:22px;
+  }
+
+  .step p{
+    font-size:13px;
+  }
+
+  .circle{
+    width:38px;
+    height:38px;
+    font-size:13px;
+  }
+
 }
 </style>
 
