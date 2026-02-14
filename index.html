@@ -209,8 +209,11 @@ footer{
   <div class="nav-links">
     <a href="#home">Home</a>
     <a href="#about">About</a>
+    <a href="#why">Why influpay</a>
+    <a href="#how">Process</a>
     <a href="#features">Features</a>
-    <a href="#model">Business Model</a>
+    <a href="#Business">Business Model</a>
+    <a href="#founder">Founder</a>
     <a href="#faq">FAQ</a>
     <a href="#contact" class="nav-cta">Contact</a>
   </div>
@@ -228,8 +231,11 @@ footer{
 <div class="mobile-menu" id="mobileMenu">
   <a href="#home" onclick="closeMenu()">Home</a>
   <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#why" onclick="closeMenu()">Why</a>
+  <a href="#how" onclick="closeMenu()">process</a>
   <a href="#features" onclick="closeMenu()">Features</a>
-  <a href="#model" onclick="closeMenu()">Business Model</a>
+  <a href="#business" onclick="closeMenu()">Business Model</a>
+  <a href="#founder" onclick="closeMenu()">Founder</a>
   <a href="#faq" onclick="closeMenu()">FAQ</a>
   <a href="#contact" class="mobile-cta" onclick="closeMenu()">Contact</a>
 </div>
@@ -450,7 +456,7 @@ function closeMenu(){
     </p>
 
     <div class="home-buttons">
-      <button class="btn-primary">Launch Campaign</button>
+      <button  class="btn-primary">Launch Campaign</button>
       <button class="platform-toggle" id="platformBtn">
   <span class="btn-text">VIEW PLATFORM</span>
 </button>
@@ -920,31 +926,30 @@ function closeMenu(){
 </style>
 
 <script>
-window.addEventListener("scroll",()=>{
+document.addEventListener("DOMContentLoaded", function(){
   document.querySelector(".fade-in").classList.add("show");
 });
+document.addEventListener("DOMContentLoaded", function() {
 
-const btn = document.getElementById("platformBtn");
+  // Fade once
+  document.querySelector(".fade-in").classList.add("show");
 
-/* Automatic ON/OFF Toggle */
-setInterval(()=>{
-  btn.classList.toggle("active");
-}, 2000);
-function toggleView(){
-  const toggle = document.getElementById("viewToggle");
-  const text = toggle.querySelector(".toggle-text");
+  const platformBtn = document.getElementById("platformBtn");
+  const launchBtn = document.querySelector(".btn-primary");
 
-  toggle.classList.toggle("active");
+  platformBtn.addEventListener("click", function() {
+    platformBtn.classList.toggle("active");
+    window.location.href = "#features";
+  });
 
-  if(toggle.classList.contains("active")){
-    text.innerText = "ON";
-  } else {
-    text.innerText = "OFF";
-  }
-}
+  launchBtn.addEventListener("click", function() {
+    window.location.href = "#contact";
+  });
+
+});
 </script>
 <!-- ================= WHY INFLU-PAY ================= -->
-<section class="why-section">
+<section id="why" class="why-section">
 
   <div class="why-container">
 
@@ -1262,7 +1267,7 @@ function toggleView(){
 </style>
 
 <!-- ================= BUSINESS MODEL 2.0 ================= -->
-<section class="bm-compact">
+<section id="business" class="bm-compact">
 
   <div class="bm-wrapper">
 
@@ -1520,7 +1525,7 @@ function toggleView(){
 }
 </style>
 <!-- ================= HOW IT WORKS ENHANCED ================= -->
-<section class="how-black">
+<section id="how" class="how-black">
 
 <div class="how-heading-wrap">
 
@@ -1929,7 +1934,7 @@ function toggleView(){
 </style>
 
 <!-- ================= FEATURES SECTION ================= -->
-<section class="features-clean">
+<section id="features" class="features-clean">
 
   <div class="features-container">
 
@@ -2088,7 +2093,7 @@ function toggleView(){
 </style>
 
 <!-- ================= FOUNDER SECTION PREMIUM ================= -->
-<section class="founder-premium">
+<section id="founder" class="founder-premium">
 
   <div class="fp-container">
 
@@ -2447,7 +2452,7 @@ function toggleView(){
 
 </style>
 <!-- ================= FAQ SECTION ================= -->
-<section class="faq-clean">
+<section id="faq" class="faq-clean">
 
   <div class="faq-container">
 
